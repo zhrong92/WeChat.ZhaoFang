@@ -1,0 +1,11 @@
+<!--components/est/estlistscrollx.wxml-->
+<view class="scroll-x-est-item" bindtap="toDetail">
+	<view class="scroll-x-est-cover">
+    <span class="scroll-x-est-tag">{{tag}}</span>
+		<image class="scroll-x-est-image" model="widthFix" src="{{img}}"></image>
+	</view>
+	<view class="scroll-x-est-name">{{title}}</view>
+	<view class="scroll-x-est-info">{{info}}</view>
+	<view class="scroll-x-est-price">{{price}}</view>
+	
+</view>

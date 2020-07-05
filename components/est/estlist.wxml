@@ -1,0 +1,25 @@
+<view class="est-list">
+	<view class="est-list-left">
+		<view class="est-list-cover">
+			<image class="est-list-cover-image" model="widthFix" src="{{img}}" ></image>
+		</view>
+			<view class="est-list-img-tag-view">
+				<block wx:if="{{hasVR}}">
+					<image class="est-list-img-tag" src="https://pages.anjukestatic.com/usersite/site/img/common/esf_list_icon_quanjing@3x.png"></image>
+				</block>
+			</view>
+	</view>
+	<view class="est-list-right">
+		<view class="est-list-title">{{title}}</view>
+		<view class="est-list-content">{{info}}</view>
+		<view>
+			<block wx:for="{{tags}}">
+				<label class="tag">{{item}}</label>
+			</block>
+		</view>
+		<view>
+			<text class="est-list-price">{{price}}</text>
+			<text class="est-list-price-avg">{{avgPrice}}</text>
+		</view>
+	</view>
+</view>

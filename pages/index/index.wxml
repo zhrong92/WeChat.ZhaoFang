@@ -1,0 +1,74 @@
+<!--pages/index/index.wxml-->
+
+<view>
+	<view>
+		<swiper indicator-dots="true" indicator-active-color="#fff" class="img-swiper">
+			<block wx:for="{{advImgs}}">
+				<swiper-item>
+					<image class="img-swiper-item" mode="scaleToFill" src="{{item}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<!-- <picker bindchange="bindCityChange" range="{{citys}}" range-key="{{'mingcheng'}}" data-bianhao="{{citys[cityIndex].bianhao}}" value="{{citys[cityIndex].bianhao}}">
+			<view class="position">
+				<image class="position-img" src="/images/index/position.png" />
+				<text>{{citys[cityIndex].mingcheng}}</text>
+			</view>
+		</picker> -->
+	</view>
+	<view class="container">
+		<view class="menu">
+			<block wx:for="{{menus}}">
+				<view class="menu-item" data-url="{{item.url}}">
+					<image mode="widthFix" src="{{item.icon}}"></image>
+					<text>{{item.name}}</text>
+				</view>
+			</block>
+		</view>
+		<view>
+			<view class="module-title">帮我找房</view>
+			<view class="zhaofang">
+				<view class="zhaofang-content">
+					<view class="zhaofang-info">
+						全城经纪人为您线上找房
+					</view>
+					<view class="zhaofang-info">
+						定制推荐/极速响应/专属推荐
+					</view>
+					<view class="zhaofang-add">立即定制 ></view>
+				</view>
+			</view>
+		</view>
+		<view>
+			<view class="module-title">新房·本周热门好盘</view>
+      <navigator class="module-more" hover-class="none" url="">更多在售楼盘 >
+			</navigator>
+      <scroll-view scroll-x="true" class="est-list-scroll-x">
+				<block wx:for="{{newPlots}}">
+					<est-list-scroll-x img="{{item.img}}" tag="{{item.tag}}" title="{{item.title}}" info="{{item.info}}" price="{{item.price}}"></est-list-scroll-x>
+				</block>
+			</scroll-view>
+		</view>
+		<view>
+			<view class="module-title">二手房·全城必看好房</view>
+      <navigator class="module-more" hover-class="none" url="">上海必看好房 >
+			</navigator>
+			<scroll-view scroll-x="true" class="est-list-scroll-x">
+				<block wx:for="{{sellEsts}}">
+					<est-list-scroll-x img="{{item.img}}" tag="{{item.tag}}" title="{{item.title}}" info="{{item.info}}" price="{{item.price}}"></est-list-scroll-x>
+				</block>
+			</scroll-view>
+		</view>
+		
+		<view>
+			<view class="module-title">猜你喜欢的二手房</view>
+			<view>
+				<block wx:for="{{favorSellEsts}}">
+					<est-list img="{{item.img}}" hasVR="{{item.hasVR}}" title="{{item.title}}" info="{{item.info}}" price="{{item.price}}" avgPrice="{{item.avgPrice}}" tags="{{item.tags}}"></est-list>
+				</block>
+			</view>
+			<button class="btn-large">查看更多二手房</button>
+		</view>
+
+	</view>
+</view>

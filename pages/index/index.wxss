@@ -1,0 +1,77 @@
+/**index.wxss**/
+
+/**轮播广告**/
+.img-swiper {
+  width:750rpx;
+  height:275rpx; 
+}
+
+.img-swiper-item {
+  width:100%;
+  height:100%; 
+}
+
+/**主菜单**/
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx 0;
+}
+
+.menu-item{
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+  padding: 10rpx 10rpx;
+}
+
+.menu-item text{
+  color: #333;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.menu-item image{
+  width: 90%;
+  height:auto;
+}
+
+/**帮我找房**/
+.zhaofang {
+  width:100%;
+  border:1rpx solid #c1c1c1;
+  border-radius: 10rpx;
+}
+
+.zhaofang-content {
+  padding:30rpx 30rpx;
+}
+
+.zhaofang-info {
+  font-size:28rpx;
+  color:#000;
+}
+
+.zhaofang-add {
+  font-size:32rpx;
+  color:#000;
+  font-weight: 700;
+  margin-top: 10rpx;
+}
+
+/**二手房scroll**/
+.est-list-scroll-x {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.est-more {
+  color:#999;
+  float:right;
+  font-size:28rpx;
+  padding-top:30rpx;
+}

@@ -1,0 +1,49 @@
+/**app.wxss**/
+page {
+  --color: #3072f6;
+  --color-bg: #FEF6E9;
+  --color-tag:rgb(132, 154, 174);
+  --color-tag-bg:rgb(244, 247, 249); 
+  --color-btn-bg:rgba(48,114,246,.05);
+
+  --color-price:#f85640;
+  --color-placeholder: #888;
+  --color-border: #f1f1f1;
+  --color-bg-grey: #f1f1f1;
+}
+
+.container {
+  padding: 20rpx 30rpx;
+}
+
+.module-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  display: inline-block;
+  margin: 40rpx 0 20rpx 0;
+}
+
+.module-more {
+  color:#999;
+  float:right;
+  font-size:28rpx;
+  padding-top:50rpx;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 8rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: var(--color-tag);
+  background-color: var(--color-tag-bg);
+  border-radius: 4rpx;
+  margin: 0 4rpx;
+}
+
+.btn-large {
+  margin-top:20rpx;
+  color: var(--color);
+  background-color: var(--color-btn-bg);
+  width: 100% !important;
+}

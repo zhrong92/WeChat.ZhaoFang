@@ -1,0 +1,61 @@
+/* components/est/estlistscrollx.wxss */
+.scroll-x-est-item {
+  width: 214rpx;
+  height: 300rpx;
+  display: inline-block;
+  margin-right: 20rpx
+}
+
+.scroll-x-est-cover {
+  width: 214rpx;
+  height: 167rpx;
+  background-color: #f1f1f1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.scroll-x-est-image {
+  width: 214rpx;
+  height: 167rpx;
+}
+
+.scroll-x-est-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-top: 4rpx;
+}
+
+.scroll-x-est-info {
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 4rpx;
+}
+
+.scroll-x-est-price {
+  color: var(--color-price);
+  font-weight: 700;
+  font-size: 28rpx;
+  margin-top: 4rpx;
+}
+
+.scroll-x-est-tag {
+  border-radius: 1px;
+  background-color: #fff;
+  padding: .8vw 1.067vw;
+  font-size: 2.667vw;
+  color: #222;
+  font-weight: 700;
+  position: absolute;
+  right: 1.067vw;
+  bottom: 1.067vw;
+  box-sizing: border-box;
+  line-height: 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

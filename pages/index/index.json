@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "est-list-scroll-x": "/components/est/estlistscrollx",
+    "est-list": "/components/est/estlist"
+  }
+}
