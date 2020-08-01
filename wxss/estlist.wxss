@@ -13,6 +13,7 @@
 }
 
 .est-list-right {
+  margin-top: -6rpx;
   padding-left: 20rpx;
   width: 100%;
 }
@@ -50,7 +51,7 @@
 }
 
 .est-list-title {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 700;
 }
 
@@ -60,7 +61,7 @@
 }
 
 .est-list-price {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: 700;
   color:var(--color-price);
 }

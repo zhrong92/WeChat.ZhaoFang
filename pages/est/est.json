@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "est-list": "/components/est/estlist",
+    "loading": "/components/loading/loading"
+  },
+  "navigationBarTitleText" : "房源列表"
 }

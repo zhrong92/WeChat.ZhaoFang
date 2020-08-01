@@ -1,1 +1,3 @@
 /* pages/est/est.wxss */
+@import '/wxss/topnav.wxss';
+@import '/wxss/searchinput.wxss';

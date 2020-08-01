@@ -19,7 +19,7 @@
 	<view class="container">
 		<view class="menu">
 			<block wx:for="{{menus}}">
-				<view class="menu-item" data-url="{{item.url}}">
+				<view class="menu-item" data-url="{{item.url}}" bindtap="toPage">
 					<image mode="widthFix" src="{{item.icon}}"></image>
 					<text>{{item.name}}</text>
 				</view>

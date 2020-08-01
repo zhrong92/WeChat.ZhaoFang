@@ -1,0 +1,5 @@
+/* components/loading/loading.wxss */
+.list-loading {
+  text-align: center;
+  margin: 20rpx;
+}

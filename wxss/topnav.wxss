@@ -124,6 +124,7 @@
 }
 
 .nav-btn-item-title {
+  font-size: 30rpx;
   padding: 20rpx 0 10rpx 20rpx;
   font-weight: 700;
 }

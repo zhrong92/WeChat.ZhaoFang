@@ -1,0 +1,20 @@
+<!--components/loading/loading.wxml-->
+
+<view class="list-loading">
+  <view wx:if="{{loading}}">
+    <view class="weui-loadmore">
+      <i class="weui-loading"></i>
+      <text class="weui-loadmore__tips">加载中...</text>
+    </view>
+  </view>
+  <view wx:if="{{noMore}}">
+    <view class="weui-loadmore weui-loadmore_line">
+    <text class="weui-loadmore__tips">没有更多</text>
+    </view>
+  </view>
+  <view wx:if="{{loadFailed}}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <text class="weui-loadmore__tips">加载失败,请重试</text>
+    </view>
+  </view>
+</view>

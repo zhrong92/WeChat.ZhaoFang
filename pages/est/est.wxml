@@ -1,2 +1,128 @@
-<!--pages/est/est.wxml-->
-<text>pages/est/est.wxml</text>
+
+<wxs src="../../utils/tool.wxs" module="tool" />
+<view style="height:100%">
+	<view>
+		<view class="search-condition">
+			<view>
+				<input class="search-input" value="{{searchValue}}" placeholder="请输入小区名称" confirm-type="search" bindconfirm="searchEst"></input>
+			</view>
+			<view class="nav">
+				<view class="nav-child {{quyuOpen? 'active' : ''}}" data-type="quyu" bindtap="tabNav">
+					<view class="nav-title">区域</view>
+					<view class="nav-icon"></view>
+				</view>
+				<view class="nav-child {{jiageOpen? 'active' : ''}}" data-type="jiage" bindtap="tabNav">
+					<view class="nav-title">价格</view>
+					<view class="nav-icon"></view>
+				</view>
+				<view class="nav-child {{fangxingOpen? 'active' : ''}}" data-type="fangxing" bindtap="tabNav">
+					<view class="nav-title">房型</view>
+					<view class="nav-icon"></view>
+				</view>
+				<view class="nav-child {{moreOpen? 'active' : ''}}" data-type="more" bindtap="tabNav">
+					<view class="nav-title">更多</view>
+					<view class="nav-icon"></view>
+				</view>
+				<view class="nav-child {{paixuOpen? 'active' : ''}}" data-type="paixu" bindtap="tabNav">
+					<view class="nav-title">排序</view>
+					<view class="nav-icon"></view>
+				</view>
+			</view>
+			<view>
+				<view class="quyu {{quyuOpen ? 'show' : 'disappear'}} ">
+					<view class="z-height">
+						<view class="half half-left">
+							<view class="{{quyuSelected == item.index ? 'current-left-select' : ''}}" wx:for="{{quyu}}" data-type="quyu" data-shangquan="{{item.shangquan}}" data-index="{{item.index}}" bindtap="singleSelect">{{item.name}}</view>
+						</view>
+						<view class="half half-right">
+							<view class="{{shangquanSelected == item.index ? 'current-right-select' : ''}}" wx:for="{{shangquan}}" data-type="shangquan" data-index="{{item.index}}" bindtap="singleSelect" wx:key="index">
+								{{item.name}}
+							</view>
+						</view>
+					</view>
+          <view class="nav-btn-group">
+							<view class="nav-btn-reset" data-type="quyu" bindtap="reset"> 重置</view>
+							<view class="nav-btn-confirm" bindtap="confirm"> 确定</view>
+						</view>
+				</view>
+				<view class="nav-down-view nav-down-view-bg {{jiageOpen ? 'show' : 'disappear'}} ">
+					<view class='z-height'>
+						<view class="nav-btn-item-title">价格区间(万)</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{jiage}}" wx:key="index">
+								<view class="nav-btn-item {{tool.indexOf(jiageSelected,item.index) ? 'active' : ''}}" data-index='{{index}}' data-type='jiage' bindtap="multiSelect"> {{item.name}}</view>
+							</block>
+						</view>
+					</view>
+					<view class="nav-btn-group">
+						<view class="nav-btn-reset" data-type="jiage" bindtap="reset"> 重置</view>
+						<view class="nav-btn-confirm" bindtap="confirm"> 确定</view>
+					</view>
+				</view>
+				<view class="nav-down-view nav-down-view-bg {{fangxingOpen ? 'show' : 'disappear'}} ">
+					<view class='z-height'>
+						<view class="nav-btn-item-title">房型选择</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{fangxing}}" wx:key="index">
+								<view class="nav-btn-item {{tool.indexOf(fangxingSelected,item.index) ? 'active' : ''}}" data-type='fangxing' data-index='{{item.index}}' bindtap="multiSelect"> {{item.name}}</view>
+							</block>
+						</view>
+					</view>
+					<view class="nav-btn-group">
+						<view class="nav-btn-reset" data-type="fangxing" bindtap="reset"> 重置</view>
+						<view class="nav-btn-confirm" bindtap="confirm"> 确定</view>
+					</view>
+				</view>
+				<view class="nav-down-view nav-down-view-bg {{paixuOpen ? 'show' : 'disappear'}} ">
+					<view class='z-height'>
+						<view>
+							<block wx:for="{{paixu}}" wx:key="index">
+								<view class="nav-list-item  {{paixuSelected == item.index ? 'active' : ''}}" bindtap="paixuSelect" data-index="{{item.index}}"> {{item.name}}</view>
+							</block>
+						</view>
+					</view>
+				</view>
+				<view class="nav-down-view nav-down-view-bg {{moreOpen ? 'show' : 'disappear'}} ">
+					<view class='z-height'>
+						<view class="nav-btn-item-title">建筑面积</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{more.mianji}}" wx:key="index">
+								<view class="nav-btn-item {{mianjiSelected == item.index? 'active' : ''}}" data-index="{{index}}" data-type='mianji' bindtap="singleSelect"> {{item.name}}</view>
+							</block>
+						</view>
+						<view class="nav-btn-item-title">房源特色</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{more.tese}}" wx:key="index">
+								<view class="nav-btn-item {{ teseSelected == item.index? 'active' : ''}}"  data-type='tese' data-index='{{item.index}}' bindtap="singleSelect"> {{item.name}}</view>
+							</block>
+						</view>
+						<view class="nav-btn-item-title">朝向</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{more.chaoxiang}}" wx:key="index">
+								<view class="nav-btn-item  {{chaoxiangSelected == item.index? 'active' : ''}}"  data-type='chaoxiang' data-index="{{index}}" bindtap="singleSelect"> {{item.name}}</view>
+							</block>
+						</view>
+						<view class="nav-btn-item-title">楼层</view>
+						<view class="nav-btn-item-group">
+							<block wx:for="{{more.louceng}}" wx:key="index">
+								<view class="nav-btn-item  {{loucengSelected == item.index? 'active' : ''}}"  data-type='louceng' data-index="{{index}}" bindtap="singleSelect"> {{item.name}}</view>
+							</block>
+						</view>
+					</view>
+					<view class="nav-btn-group">
+							<view class="nav-btn-reset" data-type="more" bindtap="reset"> 重置</view>
+							<view class="nav-btn-confirm" bindtap="confirm"> 确定</view>
+						</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<scroll-view scroll-y="true" style="height:100%;margin-top:150rpx" bindscrolltolower="scrollToLower">
+		<view class="container">
+			<block wx:for="{{ests}}">
+				<est-list img="{{item.img}}" hasVR="{{item.hasVR}}" title="{{item.title}}" info="{{item.info}}" price="{{item.price}}" avgPrice="{{item.avgPrice}}" tags="{{item.tags}}"></est-list>
+			</block>
+			<loading loading="{{loading}}" noMore="{{noMore}}" loadFailed="{{loadFailed}}"></loading>
+		</view>
+	</scroll-view>
+</view>

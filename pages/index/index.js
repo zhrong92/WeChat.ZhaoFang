@@ -6,7 +6,7 @@ Page({
   data: {
     advImgs:["https://ke-image.ljcdn.com/materials/appindexconf/d749b7e6758b505f02bfa930d16c4965.png","https://s1.ljcdn.com/pegasus/redskull/images/home/images/home/bg_header@1x.jpg"],
     menus:[
-      {name: "二手房", icon: "https://ke-image.ljcdn.com/materials/appindexconf/d5592269bafbe134453afb01c5612658.png", url: ""},
+      {name: "二手房", icon: "https://ke-image.ljcdn.com/materials/appindexconf/d5592269bafbe134453afb01c5612658.png", url: "/pages/est/est"},
       {name: "新房", icon: "https://ke-image.ljcdn.com/materials/appindexconf/44b50fa3627b67a9102c82f96ebd9189.png", url: "/"},
       {name: "租房", icon: "https://ke-image.ljcdn.com/materials/appindexconf/94250adc5e77f9b816f77032e27a8412.png", url: ""},
       {name: "商铺办公", icon: "https://ke-image.ljcdn.com/materials/appindexconf/404dfdc61f6295aab8300b71d627f571.png", url: ""},
@@ -45,8 +45,16 @@ Page({
     
   },
 
-  zhaofangAdd:function () {
-    
+  toPage: function (e) {
+    let url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: url,
+    })
+    // if (this.selectComponent("#loginId").checkUserInfo()) { //手机号已经认证过
+    //   wx.navigateTo({
+    //     url: url,
+    //   })
+    // }
   },
 
 

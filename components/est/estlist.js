@@ -54,7 +54,7 @@ Component({
       let pages = getCurrentPages();    //获取加载的页面
       let currentPage = pages[pages.length-1];    //获取当前页面的对象
       let loginComponent = currentPage.selectComponent("#loginId");
-      if (loginComponent == null || loginComponent.checkUserInfo()) { //手机号已经认证过 或者不需要判定认证信息
+      if (loginComponent.checkUserInfo() || loginComponent == null) { //手机号已经认证过 或者 不需要判定认证信息
         let charId = e.currentTarget.dataset.charid;
         let rentSellType = e.currentTarget.dataset.rentselltype;
         wx.navigateTo({
